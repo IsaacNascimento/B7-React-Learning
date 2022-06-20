@@ -1,7 +1,13 @@
 module.exports = {
-  content: ["./src/**/*.{html,jsx}"],
+  content: ["./src/**/*.{html,jsx, tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        brand: {
+          500: '#990000'
+        }
+      }
+    },
   },
   plugins: [],
 }

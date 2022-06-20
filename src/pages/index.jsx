@@ -1,4 +1,6 @@
 import React from "react";
+import { Reducer } from "../newReducers/reducer";
+import { UsoRealReducer } from "../newReducers/usoReal";
 import Componente from "./MainConcepts/BotaoPFePJ";
 import CondionalRendering from "./MainConcepts/CondionalRendering";
 import FuncState from "./MainConcepts/FuncState";
@@ -34,7 +36,12 @@ const Index = () => {
       {/* <EffectPratica/> */}
       <hr />
       {/* <RequisicaoGET/> */}
-      <JsonPlaceholder />
+      <hr />
+      {/* <JsonPlaceholder /> */}
+      <hr />
+      {/* <Reducer />  */}
+      <hr />
+      <UsoRealReducer />
     </div>
   );
 };

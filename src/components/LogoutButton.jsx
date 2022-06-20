@@ -1,13 +1,13 @@
 
 import React from 'react'
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 
 const LogoutButton = (props) => {
   return (
 
-        <Button onClick={props.onClick} variant="danger">
+        <button onClick={props.onClick} variant="danger">
            Pessoa jurídica
-        </Button>
+        </button>
     
   )
 }

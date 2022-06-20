@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { usePeople } from "../reducers/peopleList";
+import { usePeople } from "./reducers/peopleList";
 
 export const UsoRealReducer = () => {
   const [list, dispatch] = usePeople();

@@ -1,5 +1,5 @@
 import React from "react";
-import { useContagem } from "../reducers/contagem";
+import { useContagem } from "./reducers/contagem";
 
 export const Reducer = () => {
   const [state, dispatch] = useContagem();

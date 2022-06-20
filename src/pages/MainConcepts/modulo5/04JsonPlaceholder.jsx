@@ -1,26 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
+import { PostForm } from '../../../components/postForm';
+import { api } from '../../../services/api';
 
 const JsonPlaceholder = () => {
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  const [addTitle, setAddTitle] = useState("");
-  const [addBodyText, setAddBodyText] = useState("");
-
-
-  const HandleInputChange = (event) => {
-     setAddTitle(event.target.value);
- 
-  }
-
-  const HandleTextChange = (event) => {
-     setAddBodyText(event.target.value);
-   
-  }
-
-  const HandleClick = () => {
-     alert(addTitle+ '  ' +addBodyText)
-  }
 
   useEffect(() => {
     ShowJson();
@@ -28,36 +12,28 @@ const JsonPlaceholder = () => {
 
   const ShowJson = async () => {
     setLoading(true);
-    let response = await fetch("https://jsonplaceholder.typicode.com/posts");
-    let json = await response.json();
+    const json = await api.getAllPosts();
     setPost(json);
     setLoading(false);
-    console.log(response);
+    console.log(json);
+  };
+
+  const handleAddPost = async (title, body) => {
+    console.log('clicou');
+    const json = await api.addNewPost(title, body, 1);
+    console.log(json);
+    if (json.id) {
+      alert('Post added');
+    } else {
+      alert('Something bad happened');
+    }
   };
 
   return (
     <div>
       {loading && <div>Carregando...</div>}
 
-      <fieldset className="block border-2 p-3 mb-3 border-zinc-600 outline-none">
-        <legend>Novo Post</legend>
-        <input 
-          value={addTitle} 
-          onChange={HandleInputChange}
-          type="text" 
-          placeholder="Crie um novo post" />
-        <textarea 
-          value={addBodyText} 
-          onChange={HandleTextChange}
-          className="block border" />
-        <button 
-          className="block bg-sky-400 py-2 rounded-sm w-40 m-2"
-          onClick={HandleClick}
-          >
-
-          Adicionar
-        </button>
-      </fieldset>
+      <PostForm onPost={handleAddPost} />
 
       {!loading && post.length > 0 && (
         <>

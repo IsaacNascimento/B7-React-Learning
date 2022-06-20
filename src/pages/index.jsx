@@ -1,16 +1,19 @@
-import React from "react";
-import Componente from "./MainConcepts/BotaoPFePJ";
-import CondionalRendering from "./MainConcepts/CondionalRendering";
-import FuncState from "./MainConcepts/FuncState";
-import InputState from "./MainConcepts/inputState";
-import CicloVida from "./MainConcepts/modulo5/01CicloVida";
-import EffectPratica from "./MainConcepts/modulo5/02EffectPratica";
-import RequisicaoGET from "./MainConcepts/modulo5/03RequisicaoGET";
-import JsonPlaceholder from "./MainConcepts/modulo5/04JsonPlaceholder";
+import React from 'react';
+import Componente from './MainConcepts/conditionalRendering/BotaoPFePJ';
+import CondionalRendering from './MainConcepts/conditionalRendering/CondionalRendering';
+import FuncState from './MainConcepts/baseConcepts/FuncState';
+import InputState from './MainConcepts/baseConcepts/InputState';
+import CicloVida from './MainConcepts/modulo5/01CicloVida';
+import EffectPratica from './MainConcepts/modulo5/02EffectPratica';
+import RequisicaoGET from './MainConcepts/modulo5/03RequisicaoGET';
+import JsonPlaceholder from './MainConcepts/modulo5/04JsonPlaceholder';
 
-import Props from "./MainConcepts/Props";
-import State from "./MainConcepts/State";
-import TrainingState from "./MainConcepts/TrainingState";
+import Props from './MainConcepts/props/Props';
+import State from './MainConcepts/conditionalRendering/State';
+import TrainingState from './MainConcepts/conditionalRendering/TrainingState';
+
+import Blog from './MainConcepts/baseConcepts/ListKey';
+import { Reducer } from './MainConcepts/modulo5/05reducer';
 
 const Index = () => {
   return (
@@ -34,7 +37,9 @@ const Index = () => {
       {/* <EffectPratica/> */}
       <hr />
       {/* <RequisicaoGET/> */}
-      <JsonPlaceholder />
+      {/* <JsonPlaceholder /> */}
+      <hr />
+      <Reducer />
     </div>
   );
 };
